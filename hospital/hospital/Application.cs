@@ -1,7 +1,5 @@
 ﻿using hospital.Classes;
 using System;
-using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
 
 namespace hospital
 {
@@ -16,53 +14,26 @@ namespace hospital
         //- Eliminar a un paciente.
         //- Ver la lista de personas del hospital.
 
+        private Hospital hospital { get; set; }
+
+        private Application()
+        {
+            this.hospital = new Hospital("Hospital Sant Fundació Esplai");
+        }
+
         public void HospitalAplication()
         {
-            HospitalMenu();
+            Menu.HospitalMenu();
         }
 
-        public int HospitalMenu()
-        {
-            Console.Write(@"
-(1) Dar de alta un médico
-(2) Dar de alta un paciente y asignar a un médico concreto
-(3) Listar los médicos
-(4) Listar los pacientes de un médico
-(5) Eliminar a un paciente
-(6) Mostrar la lista de personas del hospital
-(0) Salir del programa
-Introduzca el numero: ");
-            int optionNumber = RequestANumber(1, 6);
-
-            return optionNumber;
-        }
-
-        public int RequestANumber(int minNumber, int maxNumber)
-        {
-            bool validNumber;
-            int number;
-
-            while(true) 
-            {
-                validNumber = int.TryParse(Console.ReadLine(), out number);
-
-                if (!validNumber)
-                    Console.Write("Introduce un numero!!! Introduce el numero: ");
-                else if (number > maxNumber || number < minNumber)
-                    Console.Write($"Introduce un numero entre {minNumber} - {maxNumber}!! Introduce el numero: ");
-                else
-                    return number;
-            }
-        }
-
-        public void DeleteAPatient(Classes.Application hospital)
+        public void DeleteAPatient()
         {
             Console.WriteLine(hospital.ListPatients());
         }
 
         public void RegisterADoctor()
         {
-
+            
         }
 
         public void RegisterAPatient()

@@ -1,15 +1,16 @@
 ﻿using hospital.Classes.People;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace hospital.Classes
 {
-    public class Application
+    public class Hospital
     {
         private string hospitalName;
         private List<Person> people = new List<Person>();
 
-        public Application(string hospitalName) 
+        public Hospital(string hospitalName) 
         { 
             this.hospitalName = hospitalName;
         }
@@ -20,6 +21,8 @@ namespace hospital.Classes
         public string ListDoctors()
         {
             StringBuilder doctors = new StringBuilder();
+
+            doctors.AppendLine(" ");
 
             foreach (Person person in people) 
             {
