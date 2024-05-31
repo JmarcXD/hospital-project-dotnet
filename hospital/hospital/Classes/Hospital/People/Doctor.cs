@@ -6,7 +6,9 @@ namespace hospital
     public class Doctor : Person
     {
         private List<Patient> listPatients = new List<Patient>(); 
+        
         public List<Patient> ListPatients {  get { return listPatients; } set {  listPatients = value; } }
+        
         public Doctor(string identification, string name, string lastName, int age) 
                     : base(identification, name, lastName, age)
         {
