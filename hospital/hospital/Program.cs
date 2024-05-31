@@ -1,6 +1,4 @@
-﻿using hospital.Classes;
-
-namespace hospital
+﻿namespace hospital
 {
     public class Program
     {

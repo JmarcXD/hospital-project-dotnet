@@ -1,4 +1,4 @@
-﻿namespace hospital.Classes.People
+﻿namespace hospital
 {
     public class Administrative : Person
     {
@@ -9,7 +9,7 @@
 
         public override string ToString()
         {
-            return $"{this} | Tipo de persona: Personal Administrativo"; 
+            return $"{base.ToString()} | Tipo de persona: Personal Administrativo"; 
         }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="Classes\Hospital\People\Person.cs" />
     <Compile Include="Classes\RequestDataFromUser\Menu.cs" />
     <Compile Include="Classes\RequestDataFromUser\RequestDataPerson.cs" />
+    <Compile Include="Enum\eMenuOptions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

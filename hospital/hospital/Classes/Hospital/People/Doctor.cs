@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace hospital.Classes.People
+namespace hospital
 {
     public class Doctor : Person
     {
         private List<Patient> listPatients = new List<Patient>(); 
-        public Doctor(string identification, string name, string lastName, int age) 
-                    : base(identification, name, lastName, age){}
-
         public List<Patient> ListPatients {  get { return listPatients; } set {  listPatients = value; } }
+        public Doctor(string identification, string name, string lastName, int age) 
+                    : base(identification, name, lastName, age)
+        {
 
+        }
 
-        public string ListOfPatients()
+        public string GetListOwnPatients()
         {
             StringBuilder patientsOfDoctor = new StringBuilder();
 
@@ -24,9 +25,14 @@ namespace hospital.Classes.People
             return patientsOfDoctor.ToString();
         }
 
+        public void AddNewPatient(Patient newPatient)
+        {
+            this.listPatients.Add(newPatient);
+        }
+
         public override string ToString()
         {
-            return $"{this} | Tipo de persona: Doctor | Numero de pacientes: {listPatients.Count}";
+            return $"{base.ToString()} | Tipo de persona: Doctor | Numero de pacientes: {listPatients.Count}";
         }
     }
 }
